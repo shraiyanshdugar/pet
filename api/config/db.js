@@ -3,17 +3,17 @@ const mongoose = require("mongoose");
 // Make connection to MongoDB
 const connectToMongoDB = async () => {
   try {
-    const uri = "mongodb+srv://shraiyansh:asdf1234@cluster0.ka7ie.mongodb.net/tagged?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://Tagged:Tagged123@cluster0.wezqpjm.mongodb.net/Tagged?retryWrites=true&w=majority";
     mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useCreateIndex: true,
+      
       useFindAndModify: true,
-    });
+    }).then(console.log("connected")).catch((err)=>console.log(err));
 
-    console.log("Connected to MongoDB...");
+    
   } catch (err) {
-    console.error(err.message);
+    console.error("is this error");
     // Terminate the application
     process.exit(1);
   }
